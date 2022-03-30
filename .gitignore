@@ -1,0 +1,8 @@
+api_app/__pycache__/
+api_app/dp_update_api/
+api_app/forex_api/
+api_app/migrations/
+CurrencyXchange/__pycache__/
+db.sqlite3
+venv/
+new.py

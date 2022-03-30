@@ -1,0 +1,1183 @@
+{
+	"info": {
+		"_postman_id": "ebf42473-b322-4017-9087-2a857f9705c5",
+		"name": "CurrencyXchange_postman_collection",
+		"description": "Postman collection.\n\nNOte: Using token authencation. Need to pass token in headers.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "USer authentication",
+			"item": [
+				{
+					"name": "User Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "postman_test",
+									"type": "text"
+								},
+								{
+									"key": "password1",
+									"value": "postman_test@123",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "postman_test@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/rest-auth/registration/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"rest-auth",
+								"registration",
+								""
+							]
+						},
+						"description": "USer signup. Automatically logs in after successful registration."
+					},
+					"response": [
+						{
+							"name": "User Signup/registration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "postman_test",
+											"type": "text"
+										},
+										{
+											"key": "password1",
+											"value": "postman_test@123",
+											"type": "text"
+										},
+										{
+											"key": "password2",
+											"value": "postman_test@123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/rest-auth/registration/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"rest-auth",
+										"registration",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2020 03:11:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "messages=\"a5ccc0769d04aed0bc0561f5c1740ce7f4dacfdb$[[\\\"__json_message\\\"\\0540\\05425\\054\\\"Successfully signed in as postman_test.\\\"]]\"; HttpOnly; Path=/; SameSite=Lax"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=pjtvNZh8TGQWe3L5UJicQM4UAMcjo3z8bGvO0wjhAaaHnoS59Z1XGppDN4QYW5Ym; expires=Sat, 23 Jan 2021 03:11:18 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "sessionid=omszwv7la1wbytofo450bsl69robfk72; expires=Sat, 08 Feb 2020 03:11:18 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"key\": \"676538801c1ee16c0dad1eca68fce7dbfdb6750d\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 676538801c1ee16c0dad1eca68fce7dbfdb6750d",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8000/rest-auth/logout/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"rest-auth",
+								"logout",
+								""
+							]
+						},
+						"description": "IMP:Pass authorization token inside headers, to delete token after logout."
+					},
+					"response": [
+						{
+							"name": "User logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 676538801c1ee16c0dad1eca68fce7dbfdb6750d",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:8000/rest-auth/logout/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"rest-auth",
+										"logout",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2020 03:42:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "sessionid=\"\"; expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; Path=/"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Successfully logged out.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "USer login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "postman_test",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "postman_test@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/rest-auth/login/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"rest-auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "USer login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "postman_test",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "postman_test@123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/rest-auth/login/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"rest-auth",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2020 03:51:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=bKzbf7aPiHXVuiUWcwE6Rlwzw4M7DmnxkUZV1yQ3UxQlJnXx4oS7kxf7jqklTDmO; expires=Sat, 23 Jan 2021 03:51:33 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "sessionid=xfeu7hrdvqjglzhxwdx91a6008c6alaj; expires=Sat, 08 Feb 2020 03:51:33 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"key\": \"2950d3121c9b61b172369c10901b238fc098751d\"\n}"
+						}
+					]
+				},
+				{
+					"name": "USer update profile picture.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 676538801c1ee16c0dad1eca68fce7dbfdb6750d",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/agawane/Desktop/0.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/update-dp/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"update-dp",
+								""
+							]
+						},
+						"description": "USer needs to be logged in first otherwise won't work. Need to pass authorization token/key in headers which you receive after successful login.\n\nPass image file inside body as a file."
+					},
+					"response": [
+						{
+							"name": "USer update profile picture.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 2950d3121c9b61b172369c10901b238fc098751d",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/home/agawane/Desktop/0.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/update-dp/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"update-dp",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2020 03:52:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Profile picture update successful.\"\n]"
+						}
+					]
+				}
+			],
+			"description": "USer singup/logout/registration/passwordchange\n\n\nREfer below link for all actions which can be done:\nhttps://django-rest-auth.readthedocs.io/en/latest/api_endpoints.html",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3a8c4dad-b75d-47f5-b967-28d79ae95c59",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "06e25363-eb4a-40f0-b566-d470fa0f292b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User wallet",
+			"item": [
+				{
+					"name": "View wallet balance.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 676538801c1ee16c0dad1eca68fce7dbfdb6750d",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/wallet/view/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"wallet",
+								"view",
+								""
+							]
+						},
+						"description": "NOte: For a new user, wallet balance is initialized to zero.\n\nNote: Need authorization token to be passed inside headers."
+					},
+					"response": [
+						{
+							"name": "View wallet balance.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 2950d3121c9b61b172369c10901b238fc098751d",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/wallet/view/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"wallet",
+										"view",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2020 03:54:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "OPTIONS, GET"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "19"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"balance\": 10000\n}"
+						},
+						{
+							"name": "View wallet balance.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 2950d3121c9b61b172369c10901b238fc098751d",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/wallet/view/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"wallet",
+										"view",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2020 03:52:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "OPTIONS, GET"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "15"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"balance\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Deposit funds/ Update wallet balance.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 676538801c1ee16c0dad1eca68fce7dbfdb6750d",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/wallet/deposit/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"wallet",
+								"deposit",
+								""
+							]
+						},
+						"description": "Adding funds to wallet."
+					},
+					"response": [
+						{
+							"name": "Deposit funds/ Update wallet balance.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 2950d3121c9b61b172369c10901b238fc098751d",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "10000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/wallet/deposit/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"wallet",
+										"deposit",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2020 03:53:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Deposit successful.\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Withdraw funds/ Update wallet balance.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token 676538801c1ee16c0dad1eca68fce7dbfdb6750d"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/wallet/withdraw/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"wallet",
+								"withdraw",
+								""
+							]
+						},
+						"description": "Withdrawing funds from wallet.\n\nIf insufficient wallet balance, will return insufficient balance."
+					},
+					"response": [
+						{
+							"name": "Withdraw funds/ Update wallet balance.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token 2950d3121c9b61b172369c10901b238fc098751d"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "10000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/wallet/withdraw/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"wallet",
+										"withdraw",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2020 03:52:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Withdraw successful.\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Insufficient Withdraw funds/ Update wallet balance.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token 676538801c1ee16c0dad1eca68fce7dbfdb6750d"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/wallet/withdraw/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"wallet",
+								"withdraw",
+								""
+							]
+						},
+						"description": "Withdrawing funds from wallet.\n\nIf insufficient wallet balance, will return insufficient balance."
+					},
+					"response": [
+						{
+							"name": "Insufficient Withdraw funds/ Update wallet balance.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token 2950d3121c9b61b172369c10901b238fc098751d"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "10000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/wallet/withdraw/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"wallet",
+										"withdraw",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2020 03:53:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Insufficient Balance. Please add funds!!\"\n]"
+						}
+					]
+				}
+			],
+			"description": "User can do the following actions:\n\n1) View wallet balance.\n2) Desposit balance.\n3) Withdraw balance. - User cannot withdaw if insufficient funds/wallet balance.\n\nNeeds authorization token.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bdb0c4d6-8426-40b3-86b3-44f76019af90",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "54251985-b082-4e05-962a-5a19714b3892",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Currency exchange",
+			"item": [
+				{
+					"name": "Convert currency",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 676538801c1ee16c0dad1eca68fce7dbfdb6750d",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "base_cur",
+									"value": "INR",
+									"type": "text"
+								},
+								{
+									"key": "dest_cur",
+									"value": "USD",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/currex/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"currex",
+								""
+							]
+						},
+						"description": "Need to pass 3 params:\n\n1) base_currency\n2) destinaton currency. - USD,SGD,etc.\n3) amount."
+					},
+					"response": [
+						{
+							"name": "Convert currency",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 2950d3121c9b61b172369c10901b238fc098751d",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "base_cur",
+											"value": "INR",
+											"type": "text"
+										},
+										{
+											"key": "dest_cur",
+											"value": "USD",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "10000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/currex/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"currex",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2020 03:55:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"converted_amount\": 140.26948,\n    \"exchange_rate\": 0.014026948\n}"
+						}
+					]
+				}
+			],
+			"description": "Returns exchanged amount to the foreign currency as passed by the user.\n\n\nRequires token inside headers.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5cde84fd-7a56-4748-b4f9-c92b73b6bded",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e27d8a94-249e-496d-98bd-17108d7a91e5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
